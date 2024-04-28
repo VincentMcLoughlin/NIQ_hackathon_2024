@@ -1,0 +1,10 @@
+openpyxl
+pandas
+flask
+sentence_transformers
+faiss-cpu
+langdetect
+transformers
+fasttext-wheel
+deepl
+requests

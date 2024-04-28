@@ -1,0 +1,6 @@
+*.csv
+*.xlsx
+__pycache__/
+*.pyc
+hackathon_2024.code-workspace
+Data/

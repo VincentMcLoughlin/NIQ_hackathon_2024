@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey of interest</title>
+</head>
+<body>
+    <h1>Survey of interest</h1>
+    <form action="/submit" method="post">
+        <label for="Question 1">We are collecting suggestions for a study on the subject of vacations. How would you describe your perfect vacation?:</label><br>
+        <input type="Question 1" name="We are collecting suggestions for a study on the subject of vacations. How would you describe your perfect vacation?"><br>
+        <label for="Question 2">Childhood memories are always special, and toys play an important role in shaping those memories. What was your favorite toy to play with as a child and why was it so special to you?:</label><br>
+        <input type="text" id="Childhood memories are always special, and toys play an important role in shaping those memories. What was your favorite toy to play with as a child and why was it so special to you?" name="Childhood memories are always special, and toys play an important role in shaping those memories. What was your favorite toy to play with as a child and why was it so special to you?"><br>
+        <label for="Question 3">Music has been called the greatest human creation throughout history. What role does Music play in your life?:</label><br>
+        <input type="text" id="Music has been called the greatest human creation throughout history. What role does Music play in your life?" name="Music has been called the greatest human creation throughout history. What role does Music play in your life?"><br><br>
+        <input type="submit" value="Send">
+    </form>
+    <br>
+    {% if valid_answers %}
+        <h2>Answer Results:</h2>
+        <p><b>Answer 1: </b> "{{ answers_of_questions.answer1 }}" : {{ valid_answers.is_valid_answer1 }}</p>
+        <p><b>Answer 2: </b> "{{ answers_of_questions.answer2 }}" : {{ valid_answers.is_valid_answer2 }}</p>
+        <p><b>Answer 3: </b> "{{ answers_of_questions.answer3 }}" : {{ valid_answers.is_valid_answer3 }}</p>
+        <p> <b> Overall Result: </b> {{ final_result }} </p>
+        <br>
+        <br>
+        <hr>
+        
+        {% autoescape false %}
+        <h2>Detailed Analysis:</h2>
+        <h3>Answer 1:</h3>
+        <p>{{ valid_answers.answer1_analysis }}</p> 
+        <br>
+        <h3>Answer 2:</h3>
+        <p>{{ valid_answers.answer2_analysis }}</p> 
+        <br>
+        <h3>Answer 3:</h3>
+        <p>{{ valid_answers.answer3_analysis }}</p>         
+        {% endautoescape %}
+
+    {% endif %}
+
+
+</body>
+</html>
