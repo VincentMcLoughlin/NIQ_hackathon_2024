@@ -18,9 +18,9 @@ class AnswerAnalyser:
         self.max_semantic_similarity = 0.8
         self.duplicate_ans_distance = 0.00001
         
-        deepl_auth_key = "c3b37c8f-07a9-421d-b9a5-7c20f7e6a115:fx"
+        deepl_auth_key = "<deepl_auth_key>"
         self.translator = deepl.Translator(deepl_auth_key)
-        self.sapling_api_key = "5WEN0QAMKM5Q1JF86IRUKJUXKBI1N5H5"
+        self.sapling_api_key = "<sapling_api_key>"
         
     def analyse_answer(self, input_question, answer):
         input_question = str(input_question)
